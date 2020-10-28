@@ -1,27 +1,32 @@
 body{
-    background-color: cadetblue;
+    background-color: bisque;
 }
 #wrapper{
+    background-color: rgba(141, 155, 221, 0.952);
     width: 80%;
     margin: 50px auto;
-    border: 1px solid red;
-    background-color: aqua;
+    border-radius: 10px;
+    box-shadow: grey;
+    padding: 10px;
 }
 
-h2{
-    margin: 10px 0 0 34%;
+h4{
+    margin: 20px 40%;
 }
 
+#head{
+    display: flex;
+    justify-content: center;
+}
 #input{
     width: 80%;
     margin: 10px 10px;
     font-size: 24px;
-    padding: 10px 0;
-    background-color: lawngreen;
+    padding: 10px 10px;  
 }
 
 #btn{
-    width: 100px;
+    width: 80px;
     
 }
 
@@ -50,14 +55,15 @@ h2{
 }
 
 .btns{
-    background-color: aqua;
+    background-color: rgb(164, 130, 184);
     padding: 10px;
     font-size: 24px;
+    color: aliceblue;
 }
 
-#bringBack{
+/* #bringBack{
     margin-left: 65%;
-}
+} */
 #notification{
     position: absolute;
     left: 20%;
