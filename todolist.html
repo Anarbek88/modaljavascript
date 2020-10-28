@@ -42,26 +42,39 @@
     wrapper.addEventListener('click', function(event){
         if(event.target.getAttribute('id')==='btn'){
             // console.log('add button clicked')
-            if(!(inputToDo.value.trim())){
 
-                warning.innerHTML='SORRY INPUT SPACE CAN NOT BE EMPTY'
-                inputToDo.value=''
+            // this section is for checking if input is empty or includes white space
+            if(!(inputToDo.value.trim())){
+                alert('Sorry input space can not be empty')
+                // warning.innerHTML='SORRY INPUT SPACE CAN NOT BE EMPTY'
+                // inputToDo.value=''
                 return
             }
-            if(listOfTasks.includes(inputToDo.value)){
-                warning.innerHTML='SORRY THIS TASK ALREADY EXISTS!'
+            //this section is for validating if task already exists or not
+            if(listOfTasks.includes(inputToDo.value.toLowerCase())){
+                alert('This task already exists')
+                // warning.innerHTML='SORRY THIS TASK ALREADY EXISTS!'
             }
+            //otherwise create task
             else{
                 warning.innerHTML=''
-                // console.log('task does not exist')
-                listOfTasks.push(inputToDo.value)
+                
+                listOfTasks.push(inputToDo.value.toLowerCase())
                 createElements(inputToDo)
             }
             inputToDo.value=''
         }
 
-        if(event.target.getAttribute('id')==='bringBack'){
-            console.log('helloooo bring back is clicked')
+        if(event.target.getAttribute('type')==='checkbox'){
+            event.target.parentElement.classList.toggle('toggle')
+        }
+        if(event.target.getAttribute('class')==='fa fa-trash'){
+            // console.log('hello')
+            const x=listOfTasks.indexOf(event.target.parentElement.textContent)
+            // console.log(x)
+            delete listOfTasks[x]
+            event.target.parentElement.remove()
+            
         }
     })
 
