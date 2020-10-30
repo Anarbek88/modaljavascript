@@ -69,9 +69,14 @@
             event.target.parentElement.classList.toggle('toggle')
         }
         if(event.target.getAttribute('class')==='fa fa-trash'){
-            // console.log('hello')
             const x=listOfTasks.indexOf(event.target.parentElement.textContent)
-            // console.log(x)
+            var r = confirm("Do you want to delete!");
+            if (r == true){
+                delete listOfTasks[x]
+                event.target.parentElement.remove()
+            } else {
+                alert("You pressed Cancel!");
+            }
             delete listOfTasks[x]
             event.target.parentElement.remove()
             
